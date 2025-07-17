@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Gym Hero | الصفحة الرئيسية</title>
+  <style>
+    /* إعدادات الصفحة الرئيسية */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: url('https://images.app.goo.gl/TZ7Pc') no-repeat center center fixed; /* صورة خلفية */
+      background-size: cover; /* تخلي الصورة تغطي كل الشاشة */
+      color: white; /* لون الخط */
+      text-align: center; /* توسيط النص */
+    }
+
+    /* طبقة شبه شفافة فوق الخلفية */
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7); /* لون أسود شفاف */
+      padding: 50px 20px; /* مسافة داخلية */
+      min-height: 100vh; /* طول الشاشة بالكامل */
+    }
+
+    /* العنوان الرئيسي */
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    /* مكان الجمل التحفيزية */
+    .quote-box {
+      position: relative; /* ضروري علشان العناصر المطلقة جواه */
+      height: 40px; /* ارتفاع ثابت */
+      margin-bottom: 50px;
+    }
+
+    /* كل جملة تحفيزية */
+    .quote {
+      position: absolute;
+      width: 100%;
+      opacity: 0; /* تبدأ مخفية */
+      animation: fadeQuotes 15s infinite; /* تتكرر */
+    }
+
+    /* الترتيب الزمني لظهور الجمل */
+    .quote:nth-child(1) {
+      animation-delay: 0s; /* أول جملة تبدأ فورًا */
+    }
+
+    .quote:nth-child(2) {
+      animation-delay: 5s; /* الثانية بعد 5 ثواني */
+    }
+
+    .quote:nth-child(3) {
+      animation-delay: 10s; /* الثالثة بعد 10 ثواني */
+    }
+
+    /* حركة الجمل التحفيزية */
+    @keyframes fadeQuotes {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      30% { opacity: 1; }
+      40% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    /* حاوية الأنظمة */
+    .programs {
+      display: flex; /* تخلي العناصر جنب بعض */
+      justify-content: center; /* توسيطهم */
+      flex-wrap: wrap; /* يخليهم ينزلوا تحت لو الشاشة صغيرة */
+      gap: 30px; /* مسافة بينهم */
+    }
+
+    /* تصميم كل صندوق نظام تمرين */
+    .program {
+      background-color: #222; /* لون غامق للصندوق */
+      padding: 30px; /* مسافة داخلية */
+      border-radius: 20px; /* حواف دائرية */
+      width: 280px;
+      box-shadow: 0 0 15px #000; /* ظل للصندوق */
+    }
+
+    /* عنوان كل نظام */
+    .program h2 {
+      margin-top: 0;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    /* الوصف أسفل كل عنوان */
+    .program p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    /* تصميم زر "ابدأ النظام" */
+    .program a {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+    }
+
+    /* لون الزر حسب كل نظام */
+    .beginner a {
+      background-color: #4CAF50; /* أخضر */
+    }
+
+    .intermediate a {
+      background-color: #2196F3; /* أزرق */
+    }
+
+    .advanced a {
+      background-color: #f44336; /* أحمر */
+    }
+
+    /* تأثير عند مرور الماوس على الزر */
+    .program a:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <!-- عنوان الموقع -->
+    <h1>مرحبًا بك في Gym Hero</h1>
+
+    <!-- مربع الجمل المتغيرة -->
+    <div class="quote-box">
+      <!-- الجملة الأولى -->
+      <p class="quote">💪 "ابدأ اليوم... بكره جسمك هيشكرك"</p>
+      <!-- الجملة الثانية -->
+      <p class="quote">🔥 "مفيش طريق سهل، بس في نتائج عظيمة"</p>
+      <!-- الجملة الثالثة -->
+      <p class="quote">🏋️‍♂️ "إوعى تقارن نفسك بحد... نافس نفسك بس"</p>
+    </div>
+
+    <!-- صندوق الأنظمة -->
+    <div class="programs">
+      <!-- نظام المبتدئ -->
+      <div class="program beginner">
+        <h2>💚 نظام المبتدئين</h2>
+        <p>تمرين عضلتين كل يوم – سهل ومنظّم للناس اللي لسه بادئة</p>
+        <a href="beginner.html">ابدأ النظام</a>
+      </div>
+
+      <!-- نظام المتوسطين -->
+      <div class="program intermediate">
+        <h2>💙 نظام المتوسطين (PPL)</h2>
+        <p>Push - Pull - Legs: نظام احترافي ومتوازن لبناء القوة والكتلة</p>
+        <a href="https://mahmad-hesham.github.io/ppl/">ابدأ النظام</a>
+      </div>
+
+      <!-- نظام المحترفين -->
+      <div class="program advanced">
+        <h2>❤️ نظام المحترفين (Upper / Lower)</h2>
+        <p>تقسيم عضلي قوي وتمرينات مكثفة 4 أيام بالأسبوع</p>
+        <a href="https://mahmad-hesham.github.io/upper-lower/">ابدأ النظام</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
